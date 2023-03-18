@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,37 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('posts');
-});
-
-
-Route::get('/posts', function () {
-    return view('posts');
-});
-
-Route::get('/posts/{post}', function ($slug) {
-    $path = __DIR__ . "/../resources/htmlContent/posts/{$slug}.html";
-
-    if (!file_exists($path)) {
-        // ddd('does not exist'); // dump, die, and debug
-        abort(404);
-    }
-
-    $post = cache()->remember("posts.{$slug}", 3600, 
-        function() use($path) {
-            return file_get_contents($path);
-        }
-    );
-
-    
-    return view('post', [
-        'post' => $post
+    return view('posts', [
+        'posts' => Post::all()
     ]);
-})->where('post', '[A-Za-z0-9_\-]+');
-
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+require __DIR__.'/web/posts.php';
