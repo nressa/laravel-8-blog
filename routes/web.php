@@ -27,7 +27,7 @@ Route::get('/posts/{post}', function ($slug) {
     $path = __DIR__ . "/../resources/htmlContent/posts/{$slug}.html";
 
     if (!file_exists($path)) {
-        // ddd('does not exist'); dump, die, and debug
+        // ddd('does not exist'); // dump, die, and debug
         abort(404);
     }
 
@@ -35,7 +35,7 @@ Route::get('/posts/{post}', function ($slug) {
     return view('post', [
         'post' => $post
     ]);
-});
+})->where('post', '[A-Za-z0-9_\-]+');
 
 
 Route::get('/dashboard', function () {
