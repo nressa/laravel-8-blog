@@ -23,7 +23,6 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/{post}', function ($slug) {
-
     $path = __DIR__ . "/../resources/htmlContent/posts/{$slug}.html";
 
     if (!file_exists($path)) {
@@ -31,7 +30,13 @@ Route::get('/posts/{post}', function ($slug) {
         abort(404);
     }
 
-    $post =  file_get_contents($path);
+    $post = cache()->remember("posts.{$slug}", 3600, 
+        function() use($path) {
+            return file_get_contents($path);
+        }
+    );
+
+    
     return view('post', [
         'post' => $post
     ]);
