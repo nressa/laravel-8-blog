@@ -1,0 +1,27 @@
+body {
+    background-color: #f1f2f2;
+    font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    
+}
+
+.body {
+    margin-inline: auto;
+    width: 50vw;
+}
+
+article {
+    padding: 20px;
+}
+
+article + article {
+    border-top: #777 1.8px solid;
+    margin-top: 20px;
+}
+
+/* Typography */
+.text-center {
+    
+    text-align: center;
+}
