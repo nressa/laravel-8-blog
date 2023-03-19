@@ -7,7 +7,7 @@
         @foreach ($posts as $post)
         <article class="{{ $loop->even ? 'bg-active' : '' }}">
             <h2>
-                <a href="/posts/{{ $post->slug }}">
+                <a href="/posts/{{ $post->id }}">
                     {!! $post->title !!}
                 </a>
             </h2>
