@@ -15,10 +15,8 @@ body {
 }
 
 .body {
-    background-color: var(--light);
     margin-inline: auto;
     width: 55vw;
-    border: 1px solid var(--dark);
     margin-block: 20px;
 }
 
@@ -41,6 +39,6 @@ h2, h2 > a {
 }
 
 /** Background Colors **/
-.bg-active, article:hover {
+.bg-active {
     background-color: var(--active);
 }
