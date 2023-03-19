@@ -29,20 +29,28 @@ class Post
         $this->slug    = $slug;
     }
 
-    public static function all()
+
+    /* Returning a collection of all the posts.
+     *
+     * @return collection
+     */
+    public static function all() : object
     {
-        return collect(File::files(resource_path('/htmlContent/posts')))
+        return cache()->rememberForever('posts.all', function() {
+            return collect(File::files(resource_path('/htmlContent/posts')))
             ->map(function($file) {
                 return YamlFrontMatter::parseFile($file);
             })
             ->map(function ($document) {
                 return new Post(
-                    $document->title,
-                    date_create($document->date),
-                    $document->excerpt,
-                    $document->body(),
-                    $document->slug
+                        $document->title,
+                        $document->date,
+                        $document->excerpt,
+                        $document->body(),
+                        $document->slug
                 );
+            })
+            ->sortByDesc('date');
         });
     }
 
