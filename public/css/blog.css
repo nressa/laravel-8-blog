@@ -1,14 +1,23 @@
+:root {
+    --dark: rgb(43, 52, 52);
+    --light: #ffffff;
+    --active: rgb(210, 255, 255);
+  }
+  
+
 body {
     background-color: #f1f2f2;
     font-size: 14px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .body {
     margin-inline: auto;
-    width: 50vw;
+    width: 55vw;
+    margin-block: 20px;
 }
 
 article {
@@ -16,12 +25,20 @@ article {
 }
 
 article + article {
-    border-top: #777 1.8px solid;
-    margin-top: 20px;
+    border-top: var(--dark) 1.8px solid;
+    padding-top: 20px;
 }
 
 /* Typography */
+h2, h2 > a {
+    color: var(--dark);
+}
+
 .text-center {
-    
     text-align: center;
+}
+
+/** Background Colors **/
+.bg-active {
+    background-color: var(--active);
 }

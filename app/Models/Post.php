@@ -19,7 +19,15 @@ class Post
 
     public $slug;
 
-    /* A constructor. It is called when an object is instantiated. */
+    /**
+     * It is called when an object is instantiated.
+     *
+     * @param string $title
+     * @param string $date
+     * @param string $excerpt
+     * @param string $body
+     * @param string $slug
+     */
     public function __construct($title, $date, $excerpt, $body, $slug)
     {
         $this->title   = $title;
@@ -30,9 +38,10 @@ class Post
     }
 
 
-    /* Returning a collection of all the posts.
+    /**
+     * Returning a collection of all the posts.
      *
-     * @return collection
+     * @return object
      */
     public static function all() : object
     {
@@ -54,10 +63,33 @@ class Post
         });
     }
 
-    public static function find(string $slug)
+    /** 
+     * Returning the first post that matches the slug. 
+     * 
+     * @param mixed $slug
+     * @return object|null
+     */
+    public static function find($slug)
     {
-        $posts = static::all();
-        return $posts->firstWhere('slug', $slug);
+        return static::all()->firstWhere('slug', $slug);
     
+    }
+
+    /**
+     * Finding the post by the slug if none match throw exception.
+     *
+     * @param mixed $slug
+     * @throws ModelNotFoundException
+     * @return object
+     */
+    public static function findOrFail($slug) : object
+    {
+        $post = static::find($slug);
+
+        if (!$post) {
+            throw new ModelNotFoundException();
+        }
+
+        return $post;
     }
 }
