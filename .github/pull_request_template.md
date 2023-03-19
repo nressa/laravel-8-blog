@@ -1,10 +1,10 @@
 # Ticket
 
-Please provide a link to the ticket related to this change
+<!-- Please provide a link to the ticket related to this change -->
 
 # Description
 
-Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
+<!-- Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change. -->
 
 ## Type of change
 
