@@ -32,7 +32,7 @@ class Post
 
     /* Returning a collection of all the posts.
      *
-     * @return collection
+     * @return object
      */
     public static function all() : object
     {

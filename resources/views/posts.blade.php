@@ -11,9 +11,9 @@
     </head>
     <body>
         <div class="body">
-            <h1>Posts</h1>
-            <?php foreach($posts as $post): ?>
-            <article>
+            <h1 class="text-center">Posts</h1>
+            @foreach ($posts as $post)
+            <article class="{{ $loop->even ? 'bg-active' : '' }}">
                 <h2>
                     <a href="/posts/{{ $post->slug }}">
                         {!! $post->title !!}
@@ -21,7 +21,7 @@
                 </h2>
                 {{ $post->excerpt }}
             </article>
-            <?php endforeach ?>
+            @endforeach
         </div>
         <footer class="text-center">
             Copyright@2023
