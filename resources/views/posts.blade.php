@@ -14,7 +14,12 @@
             <h1>Posts</h1>
             <?php foreach($posts as $post): ?>
             <article>
-                {!! $post !!}
+                <h2>
+                    <a href="/posts/{{ $post->slug }}">
+                        {!! $post->title !!}
+                    </a>
+                </h2>
+                {{ $post->excerpt }}
             </article>
             <?php endforeach ?>
         </div>
