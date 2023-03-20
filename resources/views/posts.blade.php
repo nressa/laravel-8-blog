@@ -12,6 +12,7 @@
                 </a>
             </h2>
             {{ $post->excerpt }}
+            <p>{{ $post->category->name }}</p>
         </article>
         @endforeach
     </div>

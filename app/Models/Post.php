@@ -16,20 +16,7 @@ class Post extends Model
      * @return array
      *  
      */
-    protected $guarded = [
-        'id'
-    ];
-
-    /** 
-     * The fields should be mass assigned. 
-     * 
-     * @return array
-    */
-    protected $fillable = [
-        'title',
-        'excerpt',
-        'body'
-    ];
+    protected $guarded = [];
 
     public function category()
     {
