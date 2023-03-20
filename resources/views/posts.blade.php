@@ -12,7 +12,7 @@
                 </a>
             </h2>
             {{ $post->excerpt }}
-            <p>{{ $post->category->name }}</p>
+            <p><a href="/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
         </article>
         @endforeach
     </div>
