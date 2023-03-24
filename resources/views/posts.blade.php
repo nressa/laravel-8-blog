@@ -11,6 +11,7 @@
                     {!! $post->title !!}
                 </a>
             </h2>
+            <p>By <a href="#">{{ $post->user->name }}</a></p>
             {{ $post->excerpt }}
             <p><a href="/{{ $post->category->slug }}">{{ $post->category->name }}</a></p>
         </article>

@@ -14,6 +14,8 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+
+        DB::table('categories')->truncate();
         DB::table('categories')->insert([
             ['name' => 'Hobby', 'slug' => 'hobbies'],
             ['name' => 'Personal', 'slug' => 'personal'],
