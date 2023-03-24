@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/posts', function () {
     return view('posts', [
-        // Lesser DB response time
-        'posts' => Post::with(['category', 'user'])->get()
+        'posts' => Post::latest('updated_at')->with(['category', 'author'])->get()
     ]);
 });
 
@@ -20,14 +19,14 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 
 });
 
-Route::get('/{category:slug}', function (Category $category) {
+Route::get('/categories/{category:slug}', function (Category $category) {
     return view('posts', [
         'posts' => $category->posts
     ]);
 });
 
-// Route::get('/{user:name}', function (User $user) {
-//     return view('posts', [
-//         'posts' => $user->posts
-//     ]);
-// });
+Route::get('/authors/{author:username}', function (User $author) {
+    return view('posts', [
+        'posts' => $author->posts
+    ]);
+});
