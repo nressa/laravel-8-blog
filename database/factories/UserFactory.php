@@ -2,11 +2,19 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\User;
 use Illuminate\Support\Str;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class UserFactory extends Factory
 {
+
+    use HasFactory, Notifiable;
+
+    protected $model = User::class;
+
     /**
      * Define the model's default state.
      *

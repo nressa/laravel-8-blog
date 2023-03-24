@@ -9,7 +9,6 @@ class Post extends Model
 {
     use HasFactory;
 
-    
     /**
      * The fields should not be mass assigned. 
      *

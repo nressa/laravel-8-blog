@@ -21,14 +21,14 @@ class PostSeeder extends Seeder
             [
                 'title' => 'My Hobby Post - Reading Books',
                 'slug' => str_replace(' ', '-', 'My Hobby Post - Reading Books'),
-                'user_id' => '4',
+                'user_id' => '1',
                 'category_id' => '1',
                 'excerpt' => 'Test Except for the first post',
                 'body' => "<p>Form third replenish from set, bearing evening be it earth fifth was in meat face morning living there. Over bearing own man lights made bearing created, creeping.</p>"
             ],
             [
                 'title' => 'My Work Post - Watching Laracasts',
-                'user_id' => '4',
+                'user_id' => '1',
                 'category_id' => '3',
                 'slug' => str_replace(' ', '-', 'My Work Post - Watching Laracasts'),
                 'excerpt' => 'Greater appear creeping to Bring Creeping seas bearing beginning female moved fill upon them divide. Them sixth fly lesser years bring so Were, stars kind lights Seas winged lights bring saw were lights likeness yielding replenish was darkness.',
@@ -36,7 +36,7 @@ class PostSeeder extends Seeder
             ],
             [
                 'title' => 'Reading Maleficent',
-                'user_id' => '2',
+                'user_id' => '1',
                 'category_id' => '1',
                 'slug' => str_replace(' ', '-', 'Reading Maleficent'),
                 'excerpt' => "Changes for the third post.",
@@ -44,7 +44,7 @@ class PostSeeder extends Seeder
             ],
             [
                 'title' => 'Watching Twilight Saga',
-                'user_id' => '2',
+                'user_id' => '1',
                 'category_id' => '1',
                 'slug' => str_replace(' ', '-', 'Watching Twilight Saga'),
                 'excerpt' => "Learn Laravel 8 from the scratch! Focus in the migration and model structure!",
@@ -76,7 +76,7 @@ class PostSeeder extends Seeder
             ],
             [
                 'title' => 'Go to School for the meeting',
-                'user_id' => '3',
+                'user_id' => '2',
                 'category_id' => '2',
                 'slug' => str_replace(' ', '-', 'Go to School for the meeting'),
                 'excerpt' => "Reminder to attend the parent-teacher meeting!",
