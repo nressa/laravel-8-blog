@@ -56,6 +56,13 @@ class PostSeeder extends Seeder
                 'slug' => str_replace(' ', '-', 'Buying Grocery'),
                 'excerpt' => "List down needed from the kitchen.",
                 'body' => "<p>Let. Midst. Dry without. Yielding firmament the. Were was there beginning be she'd is Evening gathered morning thing moved to were life made two you creepeth earth great, morning she'd midst after over man were. Yielding, sixth. To bring meat fourth it seasons day won't very beast moveth land she'd land him called.</p>"
+            ],
+            [
+                'title' => 'Visit Dentist',
+                'category_id' => '2',
+                'slug' => str_replace(' ', '-', 'Visit Dentist'),
+                'excerpt' => "Take yearly checkup",
+                'body' => "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>"
             ]
         ];
 
