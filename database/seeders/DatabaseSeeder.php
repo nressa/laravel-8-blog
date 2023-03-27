@@ -41,25 +41,44 @@ class DatabaseSeeder extends Seeder
 
         Post::factory(1)->create([
             'user_id' => $userId,
-            'category_id' => $categoryIdOne
+            'category_id' => $categoryIdOne,
+            'title' => 'Read the book Windfall by Jennifer Smith'
         ]);
 
         Post::factory(1)->create([
-            'category_id' => $categoryIdOne
+            'category_id' => $categoryIdOne,
+            'title' => 'Pick-up the groceries ordered online'
         ]);
 
         Post::factory(2)->create([
+            'user_id' => $userId,
+            'category_id' => $categoryIdTwo,
+            'title' => 'Learn while timeboxing to keep work-life balance'
+        ]);
+
+        Post::factory(1)->create([
+            'category_id' => $categoryIdThree,
+            'title' =>  "Visit the vet to get Snoopy's med"
+        ]);
+
+        Post::factory(1)->create([
+            'user_id' => $userId,
+            'category_id' => $categoryIdThree
+        ]);
+
+        Post::factory(4)->create([
             'user_id' => $userId,
             'category_id' => $categoryIdTwo
         ]);
 
         Post::factory(1)->create([
-            'category_id' => $categoryIdOne
+            'category_id' => $categoryIdOne,
+            'title' =>  "Watch the Netflix Series Night Agent"
         ]);
 
-        Post::factory(2)->create([
+        Post::factory(4)->create([
             'user_id' => $userId,
-            'category_id' => $categoryIdThree
+            'category_id' => $categoryIdOne
         ]);
 
 
