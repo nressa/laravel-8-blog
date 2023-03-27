@@ -14,26 +14,30 @@ Route::get('/posts', function () {
         //             ->latest('posts.updated_at')
         //             ->select('categories.slug', 'authors.name', 'authors.username', 'posts.*')
         //             ->paginate(10)
-        'posts' => Post::latest('updated_at')->get()
+        'posts' => Post::latest('updated_at')->get(),
+        'categories' => Category::all()
     ]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) { 
 
     return view('post', [
-        'post' => $post,
+        'post' => $post
     ]);
 
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('posts', [
-        'posts' => $category->posts
+        'posts' => $category->posts,
+        'currCategory' => $category,
+        'categories' => Category::all()
     ]);
 });
 
 Route::get('/authors/{author:username}', function (User $author) {
     return view('posts', [
-        'posts' => $author->posts
+        'posts' => $author->posts,
+        'categories' => Category::all()
     ]);
 });
